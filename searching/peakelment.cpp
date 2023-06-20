@@ -11,13 +11,13 @@ int findpeak(int arr[], int n)
     while(first<=end)
     {
        int mid=(first+end)/2;
-       if((mid==0 || arr[mid-1]<arr[mid]) && (mid==n-1 || arr[mid+1]<arr[mid]))
+       if((mid==0 || arr[mid-1]<=arr[mid]) && (mid==n-1 || arr[mid+1]<=arr[mid]))
             return mid;
         
         if(mid>0 && arr[mid-1]>=arr[mid])
-            return end=mid-1;
+         end=mid-1;
         else
-            return first=mid+1;
+             first=mid+1;
 
     }
     return -1;
